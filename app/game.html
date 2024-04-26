@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="./styles/game.css">
+  <link rel="stylesheet" href="./styles/null.css">
+  <script src="./scripts/script.js" defer></script>
+  <script src="https://kit.fontawesome.com/d67d776a4f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+  <div class="wrapper">
+
+    <!-- header -->
+    <header>
+      <div class="header__side-logo">
+        <h1>Amazon Games</h1>
+      </div>
+      <div class="header__side-nav">
+        <nav>
+          <ul>
+            <li><a href="./home.html">Home</a></li>
+            <li><a href="#"><u>Games</u></a></li>
+            <li><a href="./more.html">About us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- body -->
+    <main>
+      <div class="main__side-games">
+        <div class="games-containerFilters">
+          <h2>Фильтры: </h2>
+          <ul>
+            <li 
+              id="download" 
+              value="download" 
+              data-filter="filters"
+              tabindex="0">
+              Downloads
+            </li>
+            <li 
+              id="rate" 
+              value="rating" 
+              data-filter="filters"
+              tabindex="0">
+              Rating
+            </li>
+            <li 
+              id="date" 
+              value="date" 
+              data-filter="filters"
+              tabindex="0">
+              Date
+            </li>
+            <li 
+              id="price" 
+              value="price" 
+              data-filter="filters"
+              tabindex="0">
+              Price
+            </li>
+            <li tabindex="0">
+              <select name="genreSelect" id="genre">
+                <option disabled selected>Genre &#11206;</option>
+                <option value="none">Мне все равно</option>
+                <option value="action">Action</option>
+                <option value="adventure">Adventure</option>
+                <option value="rpg">RPG</option>
+                <option value="shooter">Shooter</option>
+                <option value="pixel">Pixel</option>
+                <option value="horor">Horor</option>
+              </select>
+            </li>
+          </ul>
+          <button class="showInfoBtn">Показать много / мало</button>
+          <div class="showGamesList showhideGames" title="Количество игр">
+            <i class="fa-solid fa-box-open"></i>
+            <span class="favoriteGameCount">0</span>
+          </div>
+        </div>
+        <div class="games-containerCards">
+        </div>
+      </div>
+      <div class="main__side-gamesFavorite">
+        <div class="gamesFavorite-header">
+          <div><p class="backToGamesBtn showhideGames">&larr; Вернуться к играм</p></div>
+          <div>
+            <h2>Корзина</h2>
+          </div>
+          <div title="Количество игр">
+            <i class="fa-solid fa-box-open"></i>
+            <span class="favoriteGameCount">0</span>
+          </div>
+        </div>
+        <div class="gamesFavorite-body">Здесь нечего смотреть.</div>
+      </div>
+    </main>
+
+    <div class="modalGame">
+      <div class="modalGame-inner">
+        <img src="./sources/falco-negenman--f2sJr-PJDA-unsplash.jpg" alt="">
+        <figcaption>
+          <h3>Test Title</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi fugit quam sapiente aperiam doloremque culpa, dicta voluptatibus recusandae perspiciatis cum?</p>
+        </figcaption>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer>
+      <div class="footer__side-addInfoContent">
+        <div class="addInfoContent-links">
+          <h4 class="ifCo-h4">Links</h4>
+          <a href="./home.html">Home</a>
+          <a href="#"><u>Games</u></a>
+          <a href="./more.html">About us</a>
+
+        </div>
+        <div class="addInfoContent-contact">
+          <h4 class="ifCo-h4">Contact</h4>
+          <div>
+            <a href="#" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="#" title="Google+"><i class="fa-brands fa-google-plus-g"></i></a>
+          </div>
+          <div>
+            <a href="#">068 234 567</a>
+          </div>
+          <div>
+            <a href="#" class="noCap">dada@gmail.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__side-copyright">&copy;copyright python</div>
+    </footer>
+
+  </div>
+
+  
+</body>
+</html>

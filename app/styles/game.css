@@ -1,0 +1,396 @@
+/* header- */
+header {
+  width: 100%;
+  min-height: 150px;
+  max-height: 200px;
+
+  background: var(--back-color);
+}
+.header__side-logo {
+  text-align: center;
+}
+.header__side-logo h1 {
+  cursor: pointer;
+  color: white;
+  font-size: var(--text-size-logo);
+  font-family: var(--text-family-logo);
+}
+.header__side-nav nav ul {
+  display: block;
+}
+.header__side-nav nav ul li {
+  display: inline-block;
+  margin: var(--text-margin-navBar);
+  font-size: var(--text-size-navBar);
+}
+
+/* main- */
+.main__side-games {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  opacity: 1;
+  transition: opacity 200ms ease;
+  pointer-events: all;
+}
+main.active .main__side-games {
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+}
+.games-containerFilters {
+  display: block;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  width: 100%;
+  text-align: center;
+  padding: 20px 10px;
+}
+.games-containerFilters > * {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 10px;
+}
+.games-containerFilters ul li {
+  display: inline-block;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.games-containerFilters ul li.active::after,
+.games-containerFilters ul li.active::before {
+  content: '•';
+}
+.games-containerFilters ul li select {
+  padding: 8px 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  outline: none;
+  border-radius: 4px; 
+  appearance: none;
+  background-color: transparent;
+  color: white;
+}
+.games-containerFilters ul li option {
+  font-size: 16px;
+  color: black;
+}
+.games-containerFilters button {
+  padding: 8px 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  outline: none;
+  border-radius: 4px;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+}
+.showGamesList i {
+  vertical-align: top;
+  font-size: 1.5rem;
+  margin-left: 20px;
+  cursor: pointer;
+}
+.showGamesList.act i {
+  animation: pulse .7s infinite alternate;
+}
+.showGamesList .favoriteGameCount {
+  font-size: 1.2rem;
+}
+.games-containerCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+  padding: 20px;
+}
+.games-containerCards.active .gamesCard .gamesInfo {
+  display: block;
+}
+.games-containerCards .gamesCard {
+  position: relative;
+  width: 200px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 20px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  
+  cursor: pointer;
+}
+.gamesCard .addToFav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  outline: none;
+  border: none;
+  background: none;
+  color: white;
+  overflow: hidden;
+  font-weight: bolder;
+  transition: height .3s ease,
+  background .2s ease;
+  cursor: pointer;
+  z-index: 99;
+}
+.gamesCard .removeFromFav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  outline: none;
+  border: none;
+  background: none;
+  color: white;
+  overflow: hidden;
+  font-weight: bolder;
+  transition: height .3s ease,
+  background .2s ease;
+  cursor: pointer;
+  z-index: 99;
+}
+.gamesCard:hover .addToFav {
+  color: black;
+  background: white;
+  height: 50px;
+  overflow: hidden;
+}
+.gamesCard:hover .removeFromFav {
+  background: rgb(177, 52, 52);
+  height: 50px;
+  overflow: hidden;
+}
+/* .games-containerCards .gamesCard:is(:focus, :hover) {
+  box-shadow: 0 0 30px rgb(205, 60, 60);
+} box shadown on card hover / focus*/
+.games-containerCards .gamesCard img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  filter: brightness(.3);
+  z-index: -1;
+  pointer-events: none;
+  user-select: none;
+}
+.gamesCard .gamesCard-body {
+  position: relative;
+  text-align: center;
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+.gamesCard .gamesCard-body .gamesInfo {
+  display: none;
+  margin: 0;
+  transition: all 400ms ease;
+}
+.gamesCard .gamesCard-body .game-name {
+  margin: 0 10px;
+  word-wrap: wrap;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+}
+.gamesCard .gamesCard-body .game-price {
+  font-size: 1.3rem;
+  border: 1px solid white;
+  width: min-content;
+  margin: 10px 0;
+  padding: 5px 10px;
+}
+
+.main__side-gamesFavorite {
+  width: 100%;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  height: fit-content;
+  overflow: hidden;
+  font-family: sans-serif;
+  border-bottom: 1px solid white;
+  display: none;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease;
+}
+main.active .main__side-gamesFavorite {
+  opacity: 1;
+  pointer-events: all;
+  display: flex;
+}
+.gamesFavorite-header {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid;
+}
+.gamesFavorite-header > div {
+  width: 33.33%;
+}
+.gamesFavorite-header h2 {
+  display: inline-block;
+}
+.gamesFavorite-header p {
+  display: inline-block;
+  padding: 8px 20px;
+  font-size: 1.3rem;
+  outline: none;
+  border-radius: 4px;
+  vertical-align: bottom;
+  background: transparent;
+  color: white;
+}
+.gamesFavorite-header p:is(:hover, :focus) {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.gamesFavorite-body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+  padding: 20px;
+  overflow-y: auto;
+}
+.gamesFavorite-body .gamesCard {
+  position: relative;
+  width: 200px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 20px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  cursor: pointer;
+}
+.gamesFavorite-body .gamesCard img{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  filter: brightness(.3);
+  z-index: -1;
+  pointer-events: none;
+  user-select: none;
+  cursor: pointer;
+}
+.modalGame {
+  position: fixed;
+  z-index: 999;
+  
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 400ms;
+  backdrop-filter: brightness(.2);
+}
+.modalGame.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.modalGame-inner {
+  background: var(--color-regular);
+  /* height: calc(100vh - 100px);
+  min-width: calc(100vw - 500px);
+  max-width: 1000px; */  /* add this to pretend yur smart */ 
+
+  transition: transform 400ms ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5%;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+
+  border-radius: 20px;
+}
+.modalGame-inner img {
+  position: relative;
+  object-fit: cover;
+  width: 300px;
+  border-radius: 20px;
+}
+figcaption p {
+  margin: 0 auto;
+  width: 70%;
+}
+
+/* footer- */
+footer {
+  color: var(--text-color);
+  padding: 20px;
+  height: 200px;
+  border-top: 1px solid;
+}
+.footer__side-addInfoContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
+.addInfoContent-links, .addInfoContent-contact {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  text-align: center;
+}
+.addInfoContent-links a, .addInfoContent-contact div {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.addInfoContent-links a {
+  display: block;
+  text-transform: capitalize;
+  color: #8b8b8b !important;
+}
+.addInfoContent-contact a {
+  margin: 0 10px;
+  text-transform: capitalize;
+  color: #8b8b8b !important;
+}
+.footer__side-copyright {
+  text-align: center;
+  color: #8b8b8b !important;
+}
+a.noCap {
+  text-transform: unset;
+}
+.ifCo-h4 {
+  font-family: sans-serif;
+  font-weight: 800;
+  font-size: 1.1em;
+  color: #31B8D3;
+}
+
+/* addit */
+@keyframes pulse {
+
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.3);
+  }
+  
+}

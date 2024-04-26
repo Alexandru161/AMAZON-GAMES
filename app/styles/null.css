@@ -1,0 +1,184 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat+Subrayada:regular,700);
+@import url(https://fonts.googleapis.com/css?family=Nunito:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=Quicksand:300,regular,500,600,700);
+@import url(https://fonts.googleapis.com/css?family=Tac+One:regular);
+@import url(https://fonts.googleapis.com/css?family=Rowdies:300,regular,700);
+::-webkit-scrollbar {
+  display: none;
+}
+:root {
+  --arrow: #3c376f;
+  --back-color: black;
+  --text-color: white;
+  --button-slider-color: white;
+  --font-regular: 'Nunito', sans-serif;
+  --text-font-regular: 2.5rem;
+  --text-font-secondary: 2rem;
+  --text-font-slider: 3rem;
+  --height-card-regular: 500px;
+  --text-family-logo: 'Rowdies', sans-serif;
+  --text-size-logo: clamp(1.6rem, 4vw, 6rem);
+  --text-size-navBar: clamp(.8rem, 1.4vw, 3rem);
+  --text-margin-navBar: 0 10px;
+  --color-regular: #BD632F;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  scrollbar-width: auto;
+  scrollbar-color: var(--color-regular) black;
+}
+*::-webkit-scrollbar {
+  width: 20px;
+}
+*::-webkit-scrollbar-track {
+  background: #ffffff00;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #31b8d3;
+  border-radius: 10px;
+  border: 8px none #000000;
+}
+ul {
+  margin: 0;
+  list-style-type: none;
+  margin-block: 0;
+  padding-inline: 20px;
+}
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+a:link, a:visited {
+  color: var(--text-color);
+}
+body, html {
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-image: url(https://images.unsplash.com/photo-1567095761054-7a02e69e5c43?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D); */
+  background: var(--back-color);
+  color: var(--text-color);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: var(--font-regular);
+  padding: 0;
+  overflow-y: scroll;
+  
+  margin: 0;
+  padding: 0;
+}
+img {
+  object-fit: cover;
+}
+@media (hover: hover) {
+  a:is(:hover, :focus) {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -20px;
+}
+header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+main {
+  width: 80%;
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5%;
+  margin-bottom: 10%;
+}
+footer {
+  padding: 20px;
+  bottom: 0;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* largest screens */
+@media screen and (width > 1200px) {
+  :root {
+    --text-font-regular: 3rem;
+    --text-font-secondary: 1.2rem;
+  }
+}
+/* large screens */
+@media screen and (width <= 1200px) {
+  :root {
+    --text-font-regular: 2rem;
+    --text-font-secondary: 1.2rem;
+    --text-font-slider: 2.6rem;
+  }
+}
+/* medium screens */
+@media screen and (width <= 900px) {
+  :root {
+    --text-font-regular: 1.6rem;
+    --text-font-secondary: 1rem;
+    --text-font-slider: 2.2rem;
+  }
+  .smallDotsFoSearch {
+    bottom: 10px;
+  }
+  .smallDotsFoSearch ul li {
+    width: 10px;
+    height: 10px;
+    margin: 0 1px;
+  }
+}
+/* small screens */
+@media screen and (width >= 830px) {
+  :root {
+    --height-card-regular: 400px;
+  }
+}
+@media screen and (width >= 740px) {
+  :root {
+    --text-font-secondary: 1.1rem;
+  }
+}
+@media screen and (width >= 680px) {
+  :root {
+    --height-card-regular: 430px;
+  }
+}
+@media screen and (width >= 630px) {
+  :root {
+    --height-card-regular: 450px;
+  }
+}
+@media screen and (width <= 600px) {
+  :root {
+    --text-font-regular: 1.2rem;
+    --text-font-secondary: .6rem;
+    --text-font-slider: 1.8rem;
+
+    --height-card-regular: 250px;
+  }
+}
